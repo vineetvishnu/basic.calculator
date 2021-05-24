@@ -1,0 +1,177 @@
+<!DCOTYPE HTML5>
+	<html>
+
+	<head>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+
+			body {
+				font-family: 'Mate SC', serif;
+				font-weight: 300;
+				overflow: hidden;
+			}
+
+			td {
+				width: 160px;
+			}
+
+			tr {
+				background-color: aqua;
+			}
+
+			form>input {
+				width: 150px;
+				text-align: end;
+				font-size: 25px;
+				border-radius: 5px;
+				border: 2px inset white;
+				border-bottom: 1px solid black;
+				border-right: 1px solid black;
+				font-family: 'Mate SC', serif;
+				font-weight: 500;
+
+			}
+
+			form>input::placeholder {
+				color: rosybrown;
+			}
+
+			.b2>td>input {
+				width: 100%;
+				height: 40px;
+				font-size: 27px;
+				color: white;
+				padding: 3px;
+				background-color: darkgreen;
+				border-radius: 50px;
+
+			}
+
+			h3 {
+				background-color: white;
+				width: 150px;
+				text-align: end;
+				font-size: 23px;
+				border-radius: 5px;
+				border: 2px inset white;
+				border-bottom: 1px solid black;
+				border-right: 1px solid black;
+				color: black;
+				overflow-x: auto;
+			}
+
+
+			body>section>table>caption {
+				border: 1px solid black;
+				border-radius: 50px;
+				width: 100%;
+				font-size: 23px;
+				background-color: darkgreen;
+				color: white;
+				margin-bottom: 3px;
+				padding: 1px;
+			}
+
+			#ot > input{
+				background-color: darkgreen;
+				font-family: 'Mate SC', serif;
+				color: white;
+				font-size: 14px;
+				border-radius: 20px;
+				margin: 4px 0px;
+			}
+		</style>
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<title>
+			basic calculator
+		</title>
+	</head>
+
+	<body>
+		<section id="calci">
+
+			<table border="1">
+				<caption>Basic Calculator</caption>
+				<tr class="b1">
+					<td colspan="1">
+						<fieldset>
+							<legend>Input:</legend>
+							<form>
+								<input type="text" id="a" name="a" placeholder="0"><br><br>
+								<input type="text" id="b" name="b" placeholder="0">
+							</form>
+						</fieldset>
+					</td>
+					<td colspan="1" id="ot">
+						<fieldset style="width: auto; height:110px;">
+							<legend>Output:</legend>
+							<h3 id="out">Output</h3>
+						</fieldset>
+						<input type="button" onclick="clr()" value="Clear">
+					</td>
+					
+				</tr>
+				<tr class="b2">
+					<td><input type="button" onclick="add()" value="+"></td>
+					<td><input type="button" onclick="sub()" value="-"></td>
+				</tr>
+				<tr class="b2">
+					<td><input type="button" onclick="mul()" value="*"></td>
+					<td><input type="button" onclick="div()" value="/"></td>
+				</tr>
+
+			</table>
+
+		</section>
+	</body>
+	<script>
+		function add() {
+			var a = document.getElementById("a").value;
+			var b = document.getElementById("b").value;
+			var x = Number(a);
+			var y = Number(b);
+			var m = x + y;
+			document.getElementById("out").innerHTML = m;
+		}
+
+
+		function sub() {
+			var a = document.getElementById("a").value;
+			var b = document.getElementById("b").value;
+			var x = Number(a);
+			var y = Number(b);
+			var m = x - y;
+			document.getElementById("out").innerHTML = m;
+		}
+
+
+		function mul() {
+			var a = document.getElementById("a").value;
+			var b = document.getElementById("b").value;
+			var x = Number(a);
+			var y = Number(b);
+			var m = x * y;
+			document.getElementById("out").innerHTML = m;
+		}
+
+
+
+		function div() {
+			var a = document.getElementById("a").value;
+			var b = document.getElementById("b").value;
+			var x = Number(a);
+			var y = Number(b);
+			var m = x / y;
+			document.getElementById("out").innerHTML = m;
+		}
+		function clr(){
+			document.getElementById("out").innerHTML="Output";
+			document.getElementById("a").value="";
+			document.getElementById("b").value="";
+		}
+
+	</script>
+
+	</html>
